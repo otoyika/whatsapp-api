@@ -2,7 +2,10 @@ const express = require('express')
 const routes = express.Router()
 const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('../swagger.json')
-const { enableLocalCallbackExample, enableSwaggerEndpoint } = require('./config')
+const {
+  enableLocalCallbackExample,
+  enableSwaggerEndpoint
+} = require('./config')
 
 const middleware = require('./middleware')
 const healthController = require('./controllers/healthController')
@@ -180,4 +183,13 @@ if (enableSwaggerEndpoint) {
   routes.get('/api-docs', swaggerUi.setup(swaggerDocument) /* #swagger.ignore = true */)
 }
 
+// Process callback
+const callbackHandler = async (req, res) => {
+  // log the callback
+  console.log(req.body)
+  res.sendStatus(200)
+}
+routes.post('/callback', callbackHandler)
+
+// Export routes
 module.exports = { routes }

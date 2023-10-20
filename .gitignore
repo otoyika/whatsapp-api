@@ -18,3 +18,11 @@ coverage
 # Ignore other unnecessary files
 .DS_Store
 .vscode
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/whatsapp-api.iml
